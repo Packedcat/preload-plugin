@@ -1,0 +1,71 @@
+html {
+  background-color: #282828;
+}
+#pre-load * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#pre-load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #282828;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#app {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+#pre-load .load-content {
+  margin: auto;
+  position: relative;
+}
+#pre-load .load-progress {
+  width: 340px;
+  height: 10px;
+  border: 1px solid #13cb75;
+  border-radius: 5px;
+}
+#pre-load .load-text {
+  margin-top: 20px;
+  text-align: center;
+}
+#pre-load .load-rate {
+  background-color: #13cb75;
+  height: 100%;
+  border-radius: 4px;
+}
+#pre-load .load-thumb {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  margin-left: -28px;
+  width: 60px;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 5px;
+  background-color: #555;
+}
+#pre-load .load-thumb::after {
+  content: ' ';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4.5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #555 #555 transparent;
+  border-bottom-right-radius: 5px;
+  transform: rotate(45deg);
+}

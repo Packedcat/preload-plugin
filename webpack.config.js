@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const PreLoadPlugin = require('./preload/pre-load-plugin')
 
 module.exports = {
   entry: {
@@ -7,8 +8,10 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      title: 'Code Splitting'
+      title: 'Code Splitting',
+      inject: false,
     }),
+    new PreLoadPlugin({filename: ''}),
   ],
   output: {
     filename: '[name].bundle.js',
