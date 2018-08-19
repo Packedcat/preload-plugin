@@ -1,22 +1,19 @@
-import _ from 'lodash';
+const importRouter = m => import('' + m);
 
 function component() {
-  var element = document.createElement('div');
-  var button = document.createElement('button');
-  var br = document.createElement('br');
-  button.innerHTML = 'Click me and look at the console!';
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  var element = document.createElement("div");
+  var button = document.createElement("button");
+  var br = document.createElement("br");
+  button.innerHTML = "Click me and look at the console!";
   element.appendChild(br);
   element.appendChild(button);
   button.onclick = e => {
-    import(
-      /* webpackChunkName: "print" */
-      './print'
-    ).then(module => {
+    importRouter("@/print").then(module => {
+      console.log(module);
       var print = module.default;
       print();
     });
-  }
+  };
   return element;
 }
 

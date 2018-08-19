@@ -13,6 +13,7 @@ class PreLoadPlugin {
   }
   apply(compiler) {
     compiler.plugin('emit', (compilation, callback) => {
+      console.log(compilation.assets['index.bundle.js'].source().length)
       let source = compilation.assets['index.html'].source()
       const dom = fs.readFileSync(resolve('pre-load-dom.html')).toString()
       const style = fs.readFileSync(resolve('./pre-load-style.css')).toString()
